@@ -1,0 +1,1 @@
+FROM python:3.9COPY / ./app/WORKDIR appRUN /bin/sh -c 'pip install --no-cache-dir --index-urlhttps://nexus.dev.afsmtddso.com/repository/<nexus-repo-name>/simple -r requirements.txt'ENTRYPOINT ["python"]CMD ["server.py"]
