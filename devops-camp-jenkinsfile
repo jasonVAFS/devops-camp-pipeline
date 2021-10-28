@@ -51,7 +51,7 @@ pipeline {
 	stage('Security scanning') {
             steps {
                 withCredentials([usernamePassword(credentialsId: jvillarreal-harbor-auth', usernameVariable: 'student07', passwordVariable: 'Student753!')]) {
-                    echo "Scanning $APP_IMAGE_NAME image"
+		    echo "Scanning $APP_IMAGE_NAME image"
                     sh 'python harbor_scanner.py -i $APP_IMAGE_NAME -r $HARBOR_REGISTRY -p $HARBOR_PROJECT -c ${USERNAME}:${PASSWORD}'
                 }
             }
